@@ -1,0 +1,28 @@
+{
+	"name": "Ongehoord Audiotour",
+	"homepage": "https://github.com/dipodidae/ongehoord-audiotour",
+	"authors": [
+		"= <dpdd@squat.net>"
+	],
+	"description": "Audiotour that runs in the Ongehoord bus",
+	"main": "audiotour.js",
+	"keywords": [
+		"quiz",
+		"htmlquiz"
+	],
+	"license": "MIT",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"jquery": "latest",
+		"components-font-awesome": "latest",
+		"bootstrap": "latest",
+		"audio5js": "latest"
+	}
+}
