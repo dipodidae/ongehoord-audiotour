@@ -1,7 +1,7 @@
 function audioTour(audioFile) {
 
 	if (audioFile) {
-	
+
 		this.audioFile = audioFile;
 	}
 
@@ -18,38 +18,28 @@ audioTour.prototype = {
 			playPause: document.getElementById('audio-player-control-play-pause')
 		};
 
-		this._loadPlayer();
+		this.loadPlayer();
 
 		this.player.play();
 	},
 
-	_bindEvents: function(audioPlayer) {
+	loadPlayer: function() {
 
-		var _this = this;
+		this.player = new Audio5js({
+			ready: this.loadAudioFile.bind(this)
+		});
 	},
 
-	_loadPlayer: function() {
+	loadAudioFile: function() {
 
-		var _this = this;
-		
-		this.player = new Audio5js({
-			ready: function () {
-
-				this.load(_this.audioFile);
-				_this._bindEvents();
-			}
-		});
+		this.player.load(this.audioFile);
 	},
 
 	playPause: function() {
 
-		if (this.player.playing) {
-
-			this.player.pause();
-		} else {
-
-			this.player.play();
-		}
+		return this.player.playing
+					? this.player.pause()
+					: this.player.play();
 	}
 }
 
